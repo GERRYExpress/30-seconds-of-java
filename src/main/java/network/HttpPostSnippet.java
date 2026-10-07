@@ -51,19 +51,22 @@ public class HttpPostSnippet {
    */
   public static HttpResponse<String> httpPost(String address, Map<String, String> arguments)
           throws IOException, InterruptedException {
-    var sj = new StringJoiner("&");
-    for (var entry : arguments.entrySet()) {
-      sj.add(URLEncoder.encode(entry.getKey(), StandardCharsets.UTF_8) + "="
-              + URLEncoder.encode(entry.getValue(), StandardCharsets.UTF_8));
+
+    try (HttpClient client = HttpClient.newHttpClient()) {
+      var sj = new StringJoiner("&");
+      for (var entry : arguments.entrySet()) {
+        sj.add(URLEncoder.encode(entry.getKey(), StandardCharsets.UTF_8) + "="
+                + URLEncoder.encode(entry.getValue(), StandardCharsets.UTF_8));
+      }
+
+      var out = sj.toString().getBytes(StandardCharsets.UTF_8);
+      var request = HttpRequest.newBuilder()
+              .uri(URI.create(address))
+              .headers("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
+              .POST(HttpRequest.BodyPublishers.ofByteArray(out))
+              .build();
+
+      return client.send(request, HttpResponse.BodyHandlers.ofString());
     }
-
-    var out = sj.toString().getBytes(StandardCharsets.UTF_8);
-    var request = HttpRequest.newBuilder()
-            .uri(URI.create(address))
-            .headers("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
-            .POST(HttpRequest.BodyPublishers.ofByteArray(out))
-            .build();
-
-    return HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
   }
 }
