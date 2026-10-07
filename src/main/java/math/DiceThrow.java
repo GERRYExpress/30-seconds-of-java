@@ -31,7 +31,7 @@ import java.util.Random;
  */
 public class DiceThrow {
 
-  private static Random random = new Random();
+  private static final Random random = new Random();
 
   /**
   * Enum for standardized sided dice (4,6,8,10,12 and 20).

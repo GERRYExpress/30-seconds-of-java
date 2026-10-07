@@ -28,6 +28,8 @@ package math;
  * LeastCommonMultipleSnippet.
  */
 public class LeastCommonMultipleSnippet {
+
+  private LeastCommonMultipleSnippet() {}
   /**
    * Least common multiple  calculation.
    *

@@ -25,7 +25,6 @@
 package date;
 
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -34,6 +33,7 @@ import java.util.Date;
  */
 public class AddDaysToDateSnippet {
 
+  private AddDaysToDateSnippet() {}
   /**
    * Add days to given date.
    *

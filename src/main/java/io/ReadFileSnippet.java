@@ -28,7 +28,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -36,6 +35,7 @@ import java.util.stream.Stream;
  */
 public class ReadFileSnippet {
 
+  private ReadFileSnippet() {}
   /**
    * Read file using stream and return list of string lines.
    *
@@ -44,7 +44,7 @@ public class ReadFileSnippet {
    */
   public static List<String> readFile(String fileName) throws FileNotFoundException {
     try (Stream<String> stream = new BufferedReader(new FileReader(fileName)).lines()) {
-      return stream.collect(Collectors.toList());
+      return stream.toList();
     }
   }
 }

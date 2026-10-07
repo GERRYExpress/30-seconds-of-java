@@ -29,6 +29,7 @@ package math;
  */
 public class EvenOdd {
 
+  private EvenOdd() {}
   /**
    * Returns string denoting number is odd or even.
    *

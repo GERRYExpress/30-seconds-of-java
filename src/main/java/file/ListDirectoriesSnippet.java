@@ -31,6 +31,7 @@ import java.io.File;
  */
 public class ListDirectoriesSnippet {
 
+  private ListDirectoriesSnippet() {}
   /**
    * List directories.
    *

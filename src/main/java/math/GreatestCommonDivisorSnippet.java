@@ -29,6 +29,7 @@ package math;
  */
 public class GreatestCommonDivisorSnippet {
 
+  private GreatestCommonDivisorSnippet() {}
   /**
    * Greatest common divisor calculation.
    *
