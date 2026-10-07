@@ -29,6 +29,7 @@ package algorithm;
  */
 public class InsertionSortSnippet {
 
+  private InsertionSortSnippet() {}
   /**
    * Sort an array with insertionSort algorithm.
    *

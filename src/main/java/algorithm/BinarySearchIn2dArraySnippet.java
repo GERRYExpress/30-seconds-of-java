@@ -29,6 +29,8 @@ package algorithm;
  */
 public class BinarySearchIn2dArraySnippet {
 
+  private BinarySearchIn2dArraySnippet() {  }
+
   /**
   * Search an item with binarySearch algorithm.
   *

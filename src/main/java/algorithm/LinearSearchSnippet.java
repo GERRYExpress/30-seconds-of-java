@@ -29,6 +29,7 @@ package algorithm;
  */
 public class LinearSearchSnippet {
 
+  private LinearSearchSnippet() {}
   /**
    * Search an item with linearSearch algorithm.
    *

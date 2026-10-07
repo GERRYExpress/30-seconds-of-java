@@ -29,6 +29,7 @@ package algorithm;
  */
 public class SelectionSortSnippet {
 
+  private SelectionSortSnippet() {}
   /**
    * Sort an array with selectionSort algorithm.
    *
