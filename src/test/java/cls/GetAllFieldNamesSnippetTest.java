@@ -41,12 +41,10 @@ class GetAllFieldNamesSnippetTest {
   void testGetAllFieldNames() {
     class SuperClass {
       public int superFieldOne;
-      private int superFieldTwo;
     }
 
     class TestClass extends SuperClass {
       public int fieldOne;
-      private int fieldTwo;
     }
 
     var list = GetAllFieldNamesSnippet.getAllFieldNames(TestClass.class);
