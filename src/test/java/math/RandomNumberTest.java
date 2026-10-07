@@ -24,11 +24,10 @@
 
 package math;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
 * Tests for 30 Seconds of Java code library.
@@ -43,26 +42,26 @@ class RandomNumberTest {
     // Test for Short range
     Number shortResult = RandomNumber.getRandomNumber(
             (short) 2, (short) 7);
-    assertTrue(shortResult instanceof Short);
+    assertInstanceOf(Short.class, shortResult);
     assertTrue((shortResult.shortValue() >= 2) && (shortResult.shortValue() <= 7));
     // Test for Integer range
     Number intResult = RandomNumber.getRandomNumber(5, 10);
-    assertTrue(intResult instanceof Integer);
+    assertInstanceOf(Integer.class, intResult);
     assertTrue((intResult.intValue() >= 5) && (intResult.intValue() <= 10));
     // Test for Long range
     Number longResult = RandomNumber.getRandomNumber(
             (long) -100, (long) 2500);
-    assertTrue(longResult instanceof Long);
+    assertInstanceOf(Long.class, longResult);
     assertTrue((longResult.longValue() >= -100) && (longResult.longValue() <= 2500));
     // Test for Float range
     Number floatResult = RandomNumber.getRandomNumber(
             (float) 2.5f, (float) 25.4f);
-    assertTrue(floatResult instanceof Float);
+    assertInstanceOf(Float.class, floatResult);
     assertTrue((floatResult.floatValue() >= 2.5f) && (floatResult.floatValue() <= 25.4f));
     // Test for Double range
     Number doubleResult = RandomNumber.getRandomNumber(
             (double) 100.12, (double) 200.28);
-    assertTrue(doubleResult instanceof Double);
+    assertInstanceOf(Double.class, doubleResult);
     assertTrue((doubleResult.doubleValue() >= 100.12) && (doubleResult.doubleValue() <= 200.28));
     // Test for Double range
     double d1 = (double) 100.12;
