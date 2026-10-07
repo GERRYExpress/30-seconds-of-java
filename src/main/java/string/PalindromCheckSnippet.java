@@ -29,6 +29,7 @@ package string;
  */
 public class PalindromCheckSnippet {
 
+  private PalindromCheckSnippet() {}
   /**
    * Checks if given string is palindrome (same forward and backward). Skips non-letter characters
    * Credits: https://github.com/kousen/java_8_recipes
@@ -37,14 +38,17 @@ public class PalindromCheckSnippet {
    * @return true if palindrome
    */
   public static boolean isPalindrome(String s) {
-    for (int i = 0, j = s.length() - 1; i < j; i++, j--) {
-      while (i < j && !Character.isLetter(s.charAt(i))) {
+    int i = 0;
+    int j = s.length() - 1;
+    while (i < j) {
+      while (!Character.isLetter(s.charAt(i))) {
         i++;
       }
-      while (i < j && !Character.isLetter(s.charAt(j))) {
+      while (!Character.isLetter(s.charAt(j))) {
         j--;
       }
-
+      i++;
+      j--;
       if (Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))) {
         return false;
       }

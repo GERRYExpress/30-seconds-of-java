@@ -31,7 +31,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.StringJoiner;
 
 /**
@@ -39,6 +39,7 @@ import java.util.StringJoiner;
  */
 public class HttpPostSnippet {
 
+  private HttpPostSnippet() {}
   /**
    * Performs HTTP POST request. Credits https://stackoverflow.com/questions/3324717/sending-http-post-request-in-java
    *
@@ -48,7 +49,7 @@ public class HttpPostSnippet {
    * @throws IOException          if an I/O error occurs
    * @throws InterruptedException if the operation is interrupted
    */
-  public static HttpResponse<String> httpPost(String address, HashMap<String, String> arguments)
+  public static HttpResponse<String> httpPost(String address, Map<String, String> arguments)
           throws IOException, InterruptedException {
     var sj = new StringJoiner("&");
     for (var entry : arguments.entrySet()) {

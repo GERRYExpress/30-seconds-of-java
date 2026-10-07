@@ -24,11 +24,15 @@
 
 package string;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * CompareVersionSnippet.
  */
 public class CompareVersionSnippet {
 
+  private CompareVersionSnippet() {}
   private static final String EXTRACT_VERSION_REGEX = ".*?((?<!\\w)\\d+([.-]\\d+)*).*";
 
   /**
@@ -57,6 +61,8 @@ public class CompareVersionSnippet {
   }
 
   private static String[] getVersionComponents(String version) {
-    return version.replaceAll(EXTRACT_VERSION_REGEX, "$1").split("\\.");
+    Pattern pattern = Pattern.compile(EXTRACT_VERSION_REGEX);
+    Matcher matcher = pattern.matcher(version);
+    return new String[]{matcher.replaceAll("$1")};
   }
 }

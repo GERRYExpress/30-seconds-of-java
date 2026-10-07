@@ -29,6 +29,7 @@ package system;
  */
 public class GetEnvOrDefaultSnippet {
 
+  private GetEnvOrDefaultSnippet() {}
   /**
    * Read an environment variable or return a default value when it is missing.
    *
