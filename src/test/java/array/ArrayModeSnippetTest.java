@@ -24,24 +24,25 @@
 
 package array;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Tests for 30 Seconds of Java code library.
  */
 class ArrayModeSnippetTest {
-  /**
-   * Test for {@link ArrayModeSnippet #ArrayModeSnippet(int[])}.
-   */
-  @Test
-  void testModeArray() {
-    assertEquals(List.of(2), ArrayModeSnippet.modeArray(new int[]{1, 2, 2, 3}));
-    assertEquals(List.of(2, 3), ArrayModeSnippet.modeArray(new int[]{1, 2, 2, 3, 3}));
-    assertEquals(List.of(1, 2, 3, 4), ArrayModeSnippet.modeArray(new int[]{1, 2, 3, 4}));
-    assertEquals(List.of(), ArrayModeSnippet.modeArray(new int[]{}));
-    assertEquals(List.of(-1, -2), ArrayModeSnippet.modeArray(new int[]{-1, -1, -2, -2, -3}));
-  }
+    /**
+     * Test for {@link ArrayModeSnippet #ArrayModeSnippet(int[])}.
+     */
+    @Test
+    void testModeArray() {
+        assertEquals(List.of(2), ArrayModeSnippet.modeArray(new int[]{1, 2, 2, 3}));
+        assertEquals(List.of(2, 3), ArrayModeSnippet.modeArray(new int[]{1, 2, 2, 3, 3}));
+        assertEquals(List.of(1, 2, 3, 4), ArrayModeSnippet.modeArray(new int[]{1, 2, 3, 4}));
+        assertEquals(List.of(), ArrayModeSnippet.modeArray(new int[]{}));
+        assertEquals(List.of(-1, -2), ArrayModeSnippet.modeArray(new int[]{-1, -1, -2, -2, -3}));
+    }
 }

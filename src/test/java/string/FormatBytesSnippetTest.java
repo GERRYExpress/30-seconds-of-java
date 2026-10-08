@@ -24,25 +24,25 @@
 
 package string;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
  * Tests for 30 Seconds of Java code library
  *
  */
 class FormatBytesSnippetTest {
-  /**
-    * * Tests for {@link FormatBytesSnippet#formatBytes(long)}.
+    /**
+     * * Tests for {@link FormatBytesSnippet#formatBytes(long)}.
      */
-  @Test
-  void formatBytes() {
-    assertEquals("1.46 MB", FormatBytesSnippet.formatBytes(1536000));
-    assertEquals("4.00 GB", FormatBytesSnippet.formatBytes(4294967296L));
-    assertEquals("3.00 TB", FormatBytesSnippet.formatBytes(3L * 1024 * 1024 * 1024 * 1024));
-    assertEquals("1024.00 MB", FormatBytesSnippet.formatBytes(1024L * 1024 * 1024 - 1));
-    assertEquals("Invalid Input", FormatBytesSnippet.formatBytes(-1024));
-    assertEquals("8388608.00 TB", FormatBytesSnippet.formatBytes(Long.MAX_VALUE));
-  }
+    @Test
+    void formatBytes() {
+        assertEquals("1.46 MB", FormatBytesSnippet.formatBytes(1536000));
+        assertEquals("4.00 GB", FormatBytesSnippet.formatBytes(4294967296L));
+        assertEquals("3.00 TB", FormatBytesSnippet.formatBytes(3L * 1024 * 1024 * 1024 * 1024));
+        assertEquals("1024.00 MB", FormatBytesSnippet.formatBytes(1024L * 1024 * 1024 - 1));
+        assertEquals("Invalid Input", FormatBytesSnippet.formatBytes(-1024));
+        assertEquals("8388608.00 TB", FormatBytesSnippet.formatBytes(Long.MAX_VALUE));
+    }
 }

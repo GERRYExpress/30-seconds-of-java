@@ -24,26 +24,26 @@
 
 package system;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GetEnvOrDefaultSnippetTest {
 
-  /**
-   * Tests that an existing environment variable is returned.
-   */
-  @Test
-  void testPresentEnvironmentVariable() {
-    assertEquals(System.getenv("PATH"), GetEnvOrDefaultSnippet.getEnvOrDefault("PATH", "fallback"));
-  }
+    /**
+     * Tests that an existing environment variable is returned.
+     */
+    @Test
+    void testPresentEnvironmentVariable() {
+        assertEquals(System.getenv("PATH"), GetEnvOrDefaultSnippet.getEnvOrDefault("PATH", "fallback"));
+    }
 
-  /**
-   * Tests that the default is returned for a missing environment variable.
-   */
-  @Test
-  void testMissingEnvironmentVariable() {
-    assertEquals("fallback", GetEnvOrDefaultSnippet.getEnvOrDefault(
-            "THIRTY_SECONDS_OF_JAVA_MISSING_ENV_VAR", "fallback"));
-  }
+    /**
+     * Tests that the default is returned for a missing environment variable.
+     */
+    @Test
+    void testMissingEnvironmentVariable() {
+        assertEquals("fallback", GetEnvOrDefaultSnippet.getEnvOrDefault(
+                "THIRTY_SECONDS_OF_JAVA_MISSING_ENV_VAR", "fallback"));
+    }
 }
