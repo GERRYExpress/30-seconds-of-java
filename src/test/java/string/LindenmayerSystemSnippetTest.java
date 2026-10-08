@@ -24,12 +24,11 @@
 
 package string;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 
 /*
@@ -38,34 +37,34 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 class LindenmayerSystemSnippetTest {
 
-    /**
-     * Tests for {@link LindenmayerSystemSnippet#generateLindenmayerSystem(String, Map, int)}.
-     */
-    @Test
-    void testGenerateLindenmayerSystems() {
-        String axiom = "A";
+  /**
+   * Tests for {@link LindenmayerSystemSnippet#generateLindenmayerSystem(String, Map, int)}.
+   */
+  @Test
+  void testGenerateLindenmayerSystems() {
+    String axiom = "A";
 
 
-        Map<Character, String> productionRules = new HashMap<>();
-        productionRules.put('A', "AB");
-        productionRules.put('B', "A");
+    Map<Character, String> productionRules = new HashMap<>();
+    productionRules.put('A', "AB");
+    productionRules.put('B', "A");
 
 
-        assertEquals(
-                "AB",
-                LindenmayerSystemSnippet.generateLindenmayerSystem(axiom, productionRules, 1)
-        );
-        assertEquals(
-                "ABA",
-                LindenmayerSystemSnippet.generateLindenmayerSystem(axiom, productionRules, 2)
-        );
-        assertEquals(
-                "ABAAB",
-                LindenmayerSystemSnippet.generateLindenmayerSystem(axiom, productionRules, 3)
-        );
-        assertEquals(
-                axiom,
-                LindenmayerSystemSnippet.generateLindenmayerSystem(axiom, productionRules, 0)
-        );
-    }
+    assertEquals(
+        "AB",
+        LindenmayerSystemSnippet.generateLindenmayerSystem(axiom, productionRules, 1)
+    );
+    assertEquals(
+        "ABA",
+        LindenmayerSystemSnippet.generateLindenmayerSystem(axiom, productionRules, 2)
+    );
+    assertEquals(
+        "ABAAB",
+        LindenmayerSystemSnippet.generateLindenmayerSystem(axiom, productionRules, 3)
+    );
+    assertEquals(
+        axiom,
+        LindenmayerSystemSnippet.generateLindenmayerSystem(axiom, productionRules, 0)
+    );
+  }
 }

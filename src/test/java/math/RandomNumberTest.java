@@ -29,43 +29,43 @@ import org.junit.jupiter.api.RepeatedTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Tests for 30 Seconds of Java code library.
- */
+* Tests for 30 Seconds of Java code library.
+*/
 class RandomNumberTest {
 
-    /**
-     * Tests for {@link RandomNumber #getRandomNumber(T, T)}.
-     */
-    @RepeatedTest(100)
-    void testGetRandomNumber() {
-        // Test for Short range
-        Number shortResult = RandomNumber.getRandomNumber(
-                (short) 2, (short) 7);
-        assertInstanceOf(Short.class, shortResult);
-        assertTrue((shortResult.shortValue() >= 2) && (shortResult.shortValue() <= 7));
-        // Test for Integer range
-        Number intResult = RandomNumber.getRandomNumber(5, 10);
-        assertInstanceOf(Integer.class, intResult);
-        assertTrue((intResult.intValue() >= 5) && (intResult.intValue() <= 10));
-        // Test for Long range
-        Number longResult = RandomNumber.getRandomNumber(
-                (long) -100, (long) 2500);
-        assertInstanceOf(Long.class, longResult);
-        assertTrue((longResult.longValue() >= -100) && (longResult.longValue() <= 2500));
-        // Test for Float range
-        Number floatResult = RandomNumber.getRandomNumber(
-                2.5f, 25.4f);
-        assertInstanceOf(Float.class, floatResult);
-        assertTrue((floatResult.floatValue() >= 2.5f) && (floatResult.floatValue() <= 25.4f));
-        // Test for Double range
-        Number doubleResult = RandomNumber.getRandomNumber(
-                100.12, 200.28);
-        assertInstanceOf(Double.class, doubleResult);
-        assertTrue((doubleResult.doubleValue() >= 100.12) && (doubleResult.doubleValue() <= 200.28));
-        // Test for Double range
-        double d1 = 100.12;
-        int d2 = 200;
-        assertThrows(IllegalArgumentException.class,
-                () -> RandomNumber.getRandomNumber(d1, d2));
-    }
+  /**
+  * Tests for {@link RandomNumber #getRandomNumber(T, T)}.
+  */
+  @RepeatedTest(100)
+  void testGetRandomNumber() {
+    // Test for Short range
+    Number shortResult = RandomNumber.getRandomNumber(
+            (short) 2, (short) 7);
+    assertInstanceOf(Short.class, shortResult);
+    assertTrue((shortResult.shortValue() >= 2) && (shortResult.shortValue() <= 7));
+    // Test for Integer range
+    Number intResult = RandomNumber.getRandomNumber(5, 10);
+    assertInstanceOf(Integer.class, intResult);
+    assertTrue((intResult.intValue() >= 5) && (intResult.intValue() <= 10));
+    // Test for Long range
+    Number longResult = RandomNumber.getRandomNumber(
+            (long) -100, (long) 2500);
+    assertInstanceOf(Long.class, longResult);
+    assertTrue(((long)longResult >= -100) && ((long)longResult <= 2500));
+    // Test for Float range
+    Number floatResult = RandomNumber.getRandomNumber(
+            2.5f, 25.4f);
+      assertInstanceOf(Float.class, floatResult);
+    assertTrue((floatResult.floatValue() >= 2.5f) && (floatResult.floatValue() <= 25.4f));
+    // Test for Double range
+    Number doubleResult = RandomNumber.getRandomNumber(
+            100.12, 200.28);
+      assertInstanceOf(Double.class, doubleResult);
+    assertTrue((doubleResult.doubleValue() >= 100.12) && (doubleResult.doubleValue() <= 200.28));
+    // Test for Double range
+    double d1 = 100.12;
+    int d2 = (int) 200;
+    assertThrows(IllegalArgumentException.class, 
+        () -> RandomNumber.getRandomNumber(d1, d2));
+  }
 }

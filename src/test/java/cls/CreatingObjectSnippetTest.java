@@ -24,30 +24,29 @@
 
 package cls;
 
-import org.junit.jupiter.api.Test;
-
-import java.lang.reflect.InvocationTargetException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+import java.lang.reflect.InvocationTargetException;
+import org.junit.jupiter.api.Test;
 
 /*
  * Tests for 30 Seconds of Java code library
  *
  */
 class CreatingObjectSnippetTest {
-    /**
-     * Tests for {@link CreatingObjectSnippet#createObject(String)}.
-     */
-    @Test
-    void testCreateObject()
-            throws InvocationTargetException,
-            NoSuchMethodException,
-            InstantiationException,
-            IllegalAccessException,
-            ClassNotFoundException {
-        assertEquals(String.class, CreatingObjectSnippet.createObject("java.lang.String").getClass());
-        assertNotEquals(Integer.class,
-                CreatingObjectSnippet.createObject("java.lang.String").getClass());
-    }
+  /**
+   * Tests for {@link CreatingObjectSnippet#createObject(String)}.
+   */
+  @Test
+  void testCreateObject()
+          throws InvocationTargetException,
+          NoSuchMethodException,
+          InstantiationException,
+          IllegalAccessException,
+          ClassNotFoundException {
+    assertEquals(String.class, CreatingObjectSnippet.createObject("java.lang.String").getClass());
+    assertNotEquals(Integer.class,
+            CreatingObjectSnippet.createObject("java.lang.String").getClass());
+  }
 }

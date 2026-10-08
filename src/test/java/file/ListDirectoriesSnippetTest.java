@@ -24,27 +24,26 @@
 
 package file;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
 /*
  * Tests for 30 Seconds of Java code library
  *
  */
 class ListDirectoriesSnippetTest {
-    /**
-     * Tests for {@link ListDirectoriesSnippet#listDirectories(String)}.
-     */
-    @Test
-    void testListDirectories() {
-        var files = ListDirectoriesSnippet.listDirectories("src/test/resources");
-        assertTrue(Arrays.stream(files).allMatch(File::isDirectory));
-        assertTrue(Arrays.asList(files).contains(new File("src/test/resources/dir1")));
-        assertTrue(Arrays.asList(files).contains(new File("src/test/resources/dir2")));
-    }
+  /**
+   * Tests for {@link ListDirectoriesSnippet#listDirectories(String)}.
+   */
+  @Test
+  void testListDirectories() {
+    var files = ListDirectoriesSnippet.listDirectories("src/test/resources");
+    assertTrue(Arrays.stream(files).allMatch(File::isDirectory));
+    assertTrue(Arrays.asList(files).contains(new File("src/test/resources/dir1")));
+    assertTrue(Arrays.asList(files).contains(new File("src/test/resources/dir2")));
+  }
 
 }

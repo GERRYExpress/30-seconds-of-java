@@ -24,15 +24,14 @@
 
 package file;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashSet;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
 
 /*
@@ -40,21 +39,21 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  *
  */
 class ListFilesInDirectorySnippetTest {
-    /**
-     * Tests for {@link ListFilesInDirectorySnippet#listFilesInDirectory(File)}.
-     */
-    @Test
-    void testListFilesInDirectory() {
-        var files = ListFilesInDirectorySnippet.listFilesInDirectory(
-                Paths.get("src", "test", "resources").toString()
-        );
-        assertEquals(2, files.length);
-        var filenames = new HashSet<>(Arrays.asList(files[0].toString(), files[1].toString()));
-        assertTrue(filenames.contains(
-                Paths.get("src", "test", "resources", "somelines.txt").toString()
-        ));
-        assertTrue(filenames.contains(
-                Paths.get("src", "test", "resources", "someotherlines.txt").toString()
-        ));
-    }
+  /**
+   * Tests for {@link ListFilesInDirectorySnippet#listFilesInDirectory(File)}.
+   */
+  @Test
+  void testListFilesInDirectory() {
+    var files = ListFilesInDirectorySnippet.listFilesInDirectory(
+        Paths.get("src", "test", "resources").toString()
+    );
+    assertEquals(2, files.length);
+    var filenames = new HashSet<>(Arrays.asList(files[0].toString(), files[1].toString()));
+    assertTrue(filenames.contains(
+        Paths.get("src", "test", "resources", "somelines.txt").toString()
+    ));
+    assertTrue(filenames.contains(
+        Paths.get("src", "test", "resources", "someotherlines.txt").toString()
+    ));
+  }
 }

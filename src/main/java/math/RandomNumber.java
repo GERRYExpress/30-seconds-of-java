@@ -34,7 +34,7 @@ public class RandomNumber {
 
   private RandomNumber() {}
 
-  private static Random random = new Random();
+  private static final Random random = new Random();
 
   /**
   * Return a random number between two given numbers.
@@ -55,8 +55,8 @@ public class RandomNumber {
       return start.intValue()
               + random.nextInt(end.intValue() - start.intValue() + 1);
     } else if (start instanceof Long && end instanceof Long) {
-      return start.longValue()
-              + random.nextLong() * end.longValue() - start.longValue() + 1;
+      return Math.round(start.longValue()
+              + (random.nextDouble() * end.longValue()) - start.longValue());
     } else if (start instanceof Float && end instanceof Float) {
       return start.floatValue()
               + random.nextFloat() * (end.floatValue() - start.floatValue());

@@ -24,26 +24,26 @@
 
 package string;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Test;
+ 
 /*
- * Tests for 30 Seconds of Java code library
- *
- */
+* Tests for 30 Seconds of Java code library
+*
+*/
 class KmpSubstringSearchSnippetTest {
-
-    /**
-     * Tests for {@link KmpSubstringSearchSnippet#kmpSearch(String, String)}.
-     */
-    @Test
-    void testKmpSearch() {
-        // Test cases for KMP substring search
-        assertEquals(6, KmpSubstringSearchSnippet.kmpSearch("abxabcabcaby", "abcaby"));
-        assertEquals(7, KmpSubstringSearchSnippet.kmpSearch("subash pandey", "pandey"));
-        assertEquals(-1, KmpSubstringSearchSnippet.kmpSearch("abcd", "e"));
-        assertEquals(0, KmpSubstringSearchSnippet.kmpSearch("aaaaa", "a"));
-        assertEquals(2, KmpSubstringSearchSnippet.kmpSearch("abcdabcd", "cdab"));
-    }
+ 
+  /**
+  * Tests for {@link KmpSubstringSearchSnippet#kmpSearch(String, String)}.
+  */
+  @Test
+  void testKmpSearch() {
+    // Test cases for KMP substring search
+    assertEquals(6, KmpSubstringSearchSnippet.kmpSearch("abxabcabcaby", "abcaby"));
+    assertEquals(7, KmpSubstringSearchSnippet.kmpSearch("subash pandey", "pandey"));
+    assertEquals(-1, KmpSubstringSearchSnippet.kmpSearch("abcd", "e"));
+    assertEquals(0, KmpSubstringSearchSnippet.kmpSearch("aaaaa", "a"));
+    assertEquals(2, KmpSubstringSearchSnippet.kmpSearch("abcdabcd", "cdab"));
+  }
 } 

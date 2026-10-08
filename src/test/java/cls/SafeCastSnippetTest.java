@@ -24,34 +24,34 @@
 
 package cls;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 /*
  * Tests for 30 Seconds of Java code library
  *
  */
 class SafeCastSnippetTest {
-    /**
-     * Tests successful casts for {@link SafeCastSnippet#safeCast(Object, Class)}.
-     */
-    @Test
-    void testSafeCastSuccess() {
-        var result = SafeCastSnippet.safeCast("30 seconds", String.class);
+  /**
+   * Tests successful casts for {@link SafeCastSnippet#safeCast(Object, Class)}.
+   */
+  @Test
+  void testSafeCastSuccess() {
+    var result = SafeCastSnippet.safeCast("30 seconds", String.class);
 
-        assertTrue(result.isPresent());
-        assertEquals("30 seconds", result.get());
-    }
+    assertTrue(result.isPresent());
+    assertEquals("30 seconds", result.get());
+  }
 
-    /**
-     * Tests failed casts for {@link SafeCastSnippet#safeCast(Object, Class)}.
-     */
-    @Test
-    void testSafeCastFailure() {
-        var result = SafeCastSnippet.safeCast("30 seconds", Integer.class);
+  /**
+   * Tests failed casts for {@link SafeCastSnippet#safeCast(Object, Class)}.
+   */
+  @Test
+  void testSafeCastFailure() {
+    var result = SafeCastSnippet.safeCast("30 seconds", Integer.class);
 
-        assertTrue(result.isEmpty());
-    }
+    assertTrue(result.isEmpty());
+  }
 }

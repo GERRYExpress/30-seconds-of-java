@@ -24,25 +24,25 @@
 
 package string;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 /*
  * Tests for 30 Seconds of Java code library
  *
  */
 class StringToDateSnippetTest {
-    /**
-     * Tests for {@link StringToDateSnippet#stringToDate(String, String)}.
-     */
-    @Test
-    void testStringToDate() {
-        LocalDate outputDate = StringToDateSnippet.stringToDate("2017-08-18", "yyyy-MM-dd");
-        assertEquals(2017, outputDate.getYear());
-        assertEquals(8, outputDate.getMonth().getValue());
-        assertEquals(18, outputDate.getDayOfMonth());
-    }
+  /**
+   * Tests for {@link StringToDateSnippet#stringToDate(String, String)}.
+   */
+  @Test
+  void testStringToDate() {
+    LocalDate outputDate = StringToDateSnippet.stringToDate("2017-08-18", "yyyy-MM-dd");
+    assertEquals(2017, outputDate.getYear());
+    assertEquals(8, outputDate.getMonth().getValue());
+    assertEquals(18, outputDate.getDayOfMonth());
+  }
 }

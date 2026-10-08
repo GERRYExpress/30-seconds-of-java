@@ -47,11 +47,11 @@ public class PalindromCheckSnippet {
       while (!Character.isLetter(s.charAt(j))) {
         j--;
       }
-      i++;
-      j--;
       if (Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))) {
         return false;
       }
+      i++;
+      j--;
     }
 
     return true;
