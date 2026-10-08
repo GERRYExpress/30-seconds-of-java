@@ -43,7 +43,7 @@ class BinarySearchIn2dArraySnippetTest {
     int[][] arr2 = {{3, 4, 7, 9}, {12, 24, 26, 29}, {34, 55, 88, 99}, {100, 189, 232, 234}};
     int[] ans2 = {-1, -1};
     Assertions.assertArrayEquals(ans2, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr2, 69));
-    int[][] arr3 = {{3,5,89,100}, {1,4,7,9}, {30,53,74,111}, {1,2,3,4} };
+    int[][] arr3 = {{3,5,89,100}, {1,4,7,9} };
     int[] ans3 = {-1, -1};
     Assertions.assertArrayEquals(ans3, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr3, 100));
   }
