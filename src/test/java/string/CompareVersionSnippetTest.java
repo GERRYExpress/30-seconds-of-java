@@ -37,6 +37,7 @@ class CompareVersionSnippetTest {
    */
   @Test
   void testCompareVersion() {
+    assertEquals(0, CompareVersionSnippet.compareVersion("0", "13.2"));
     assertEquals(0, CompareVersionSnippet.compareVersion("awesome-app-2.3.4-SNAPSHOT", "2.3.4"));
     assertEquals(0, CompareVersionSnippet.compareVersion("2.3.4-SNAPSHOT", "2.3.4"));
     assertEquals(1, CompareVersionSnippet.compareVersion("2.3.4.1-SNAPSHOT", "2.3.4"));

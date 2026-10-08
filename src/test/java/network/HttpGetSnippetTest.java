@@ -25,6 +25,7 @@
 package network;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -40,5 +41,10 @@ class HttpGetSnippetTest {
   void testHttpGet() throws Exception {
     var response = HttpGetSnippet.httpGet("http://www.google.com");
     assertEquals(200, response.statusCode());
+  }
+
+  @Test
+  void testHttpGetException() {
+    assertThrows(NullPointerException.class, () -> HttpGetSnippet.httpGet(null));
   }
 }

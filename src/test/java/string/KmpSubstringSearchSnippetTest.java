@@ -40,6 +40,8 @@ class KmpSubstringSearchSnippetTest {
   @Test
   void testKmpSearch() {
     // Test cases for KMP substring search
+    assertEquals(0, KmpSubstringSearchSnippet.kmpSearch("hoidawd",null));
+    assertEquals(0, KmpSubstringSearchSnippet.kmpSearch("hoidawdawd",""));
     assertEquals(6, KmpSubstringSearchSnippet.kmpSearch("abxabcabcaby", "abcaby"));
     assertEquals(7, KmpSubstringSearchSnippet.kmpSearch("subash pandey", "pandey"));
     assertEquals(-1, KmpSubstringSearchSnippet.kmpSearch("abcd", "e"));

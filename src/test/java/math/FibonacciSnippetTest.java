@@ -71,6 +71,19 @@ class FibonacciSnippetTest {
     assertEquals(102334155, FibonacciSnippet.fibonacci(40));
   }
 
+  @Test
+  void testFibonacciBigOverloaded() {
+    assertEquals(1, FibonacciSnippet.fibonacciBig(0));
+    assertEquals(1, FibonacciSnippet.fibonacciBig(1));
+    assertEquals(1, FibonacciSnippet.fibonacciBig(2));
+    assertEquals(2, FibonacciSnippet.fibonacciBig(3));
+    assertEquals(3, FibonacciSnippet.fibonacciBig(4));
+    assertEquals(5, FibonacciSnippet.fibonacciBig(5));
+    assertEquals(8, FibonacciSnippet.fibonacciBig(6));
+    assertEquals(13, FibonacciSnippet.fibonacciBig(7));
+    assertEquals(21, FibonacciSnippet.fibonacciBig(8));
+  }
+
   /**
    * Tests for {@link FibonacciSnippet#iterativeFibonacci(int)}.
    */

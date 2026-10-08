@@ -38,9 +38,10 @@ class LeastCommonMultipleSnippetTest {
    */
   @Test
    void testLcm() {
-    assertEquals(4, LeastCommonMultipleSnippet.lcm(2, 4));
-    assertEquals(10, LeastCommonMultipleSnippet.lcm(2, 5));
-    assertEquals(72, LeastCommonMultipleSnippet.lcm(18, 24));
-    assertEquals(7, LeastCommonMultipleSnippet.lcm(7, 7));
+      assertEquals(0, LeastCommonMultipleSnippet.lcm(3,0));
+      assertEquals(4, LeastCommonMultipleSnippet.lcm(2, 4));
+      assertEquals(10, LeastCommonMultipleSnippet.lcm(2, 5));
+      assertEquals(72, LeastCommonMultipleSnippet.lcm(18, 24));
+      assertEquals(7, LeastCommonMultipleSnippet.lcm(7, 7));
   }
 }

@@ -49,10 +49,12 @@ public class HttpGetSnippet {
               .uri(URI.create(uri))
               .build();
       return client.send(request, HttpResponse.BodyHandlers.ofString());
-    } catch (IOException exception) {
+    } catch (IOException e) {
       throw new IOException();
-    } catch (InterruptedException exception) {
+    } catch (InterruptedException e) {
       throw new InterruptedException();
+    } catch (NullPointerException e) {
+      throw new NullPointerException();
     }
   }
 }
