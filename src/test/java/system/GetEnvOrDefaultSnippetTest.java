@@ -35,7 +35,8 @@ class GetEnvOrDefaultSnippetTest {
    */
   @Test
   void testPresentEnvironmentVariable() {
-    assertEquals(System.getenv("PATH"), GetEnvOrDefaultSnippet.getEnvOrDefault("PATH", "fallback"));
+    String path = GetEnvOrDefaultSnippet.getEnvOrDefault("PATH", "fallback");
+    assertEquals(System.getenv().getOrDefault("PATH","fallback"), path);
   }
 
   /**
