@@ -27,7 +27,10 @@ package math;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /*
  * Tests for 30 Seconds of Java code library
@@ -60,5 +63,23 @@ class HaversineFormulaSnippetTest {
                 () -> {
                     HaversineFormulaSnippet.findHaversineDistance(666, 0, 0, 0);
                 });
+    }
+
+    @Test
+    void testValidLatitude() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        var haverClass = HaversineFormulaSnippet.class;
+        Method method = haverClass.getDeclaredMethod("isValidLatitude", double.class);
+        method.setAccessible(true);
+        assertTrue((Boolean) method.invoke(double.class, -90));
+        assertFalse((Boolean) method.invoke(double.class, -91));
+    }
+
+    @Test
+    void testValidLongitude() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        var haverClass = HaversineFormulaSnippet.class;
+        Method method = haverClass.getDeclaredMethod("isValidLongitude", double.class);
+        method.setAccessible(true);
+        assertTrue((Boolean) method.invoke(double.class, "-180"));
+        assertFalse((Boolean) method.invoke(double.class, "-181"));
     }
 }
