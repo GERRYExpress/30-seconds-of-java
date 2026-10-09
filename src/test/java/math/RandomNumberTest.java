@@ -41,8 +41,7 @@ class RandomNumberTest {
     Number byteResult = RandomNumber.getRandomNumber((byte) 0, (byte) 4);
     assertInstanceOf(Byte.class, byteResult);
     assertTrue(byteResult.byteValue() >= 0 && byteResult.byteValue() <= 4);
-    Number byteIncResult = RandomNumber.getRandomNumber((double) 0, (byte) 4);
-    assertInstanceOf(Double.class, byteIncResult);
+    assertThrows(IllegalArgumentException.class, () ->RandomNumber.getRandomNumber((double) 0, (byte) 4));
     // Test for Short range
     Number shortResult = RandomNumber.getRandomNumber(
             (short) 2, (short) 7);
@@ -69,7 +68,7 @@ class RandomNumberTest {
     assertTrue((doubleResult.doubleValue() >= 100.12) && (doubleResult.doubleValue() <= 200.28));
     // Test for Double range
     double d1 = 100.12;
-    int d2 = (int) 200;
+    int d2 = 200;
     assertThrows(IllegalArgumentException.class, 
         () -> RandomNumber.getRandomNumber(d1, d2));
   }
