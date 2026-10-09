@@ -38,6 +38,11 @@ class RandomNumberTest {
   */
   @RepeatedTest(100)
   void testGetRandomNumber() {
+    Number byteResult = RandomNumber.getRandomNumber((byte) 0, (byte) 4);
+    assertInstanceOf(Byte.class, byteResult);
+    assertTrue(byteResult.byteValue() >= 0 && byteResult.byteValue() <= 4);
+    Number byteIncResult = RandomNumber.getRandomNumber((double) 0, (byte) 4);
+    assertInstanceOf(Double.class, byteIncResult);
     // Test for Short range
     Number shortResult = RandomNumber.getRandomNumber(
             (short) 2, (short) 7);

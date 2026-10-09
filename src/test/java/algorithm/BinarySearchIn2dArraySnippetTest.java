@@ -27,6 +27,8 @@ package algorithm;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 /**
  * Tests for 30 Seconds of Java code library.
  */
@@ -43,8 +45,11 @@ class BinarySearchIn2dArraySnippetTest {
     int[][] arr2 = {{3, 4, 7, 9}, {12, 24, 26, 29}, {34, 55, 88, 99}, {100, 189, 232, 234}};
     int[] ans2 = {-1, -1};
     Assertions.assertArrayEquals(ans2, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr2, 69));
-    int[][] arr3 = {{3,5,89,100}, {1,4,7,9} };
-    int[] ans3 = {-1, -1};
-    Assertions.assertArrayEquals(ans3, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr3, 100));
+    int[][] arr3 = {{3,5,6,100}, {1,4,7,9} };
+    int[] ans3 = {0, 0};
+    Assertions.assertArrayEquals(ans3, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr3, 3));
+    int[][] arr4 = {{1,2,3,7}};
+    int[] ans4 = {0, 0};
+    System.out.println(Arrays.toString(BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr4, 3)));
   }
 }
