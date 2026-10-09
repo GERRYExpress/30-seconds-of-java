@@ -120,4 +120,9 @@ class DammSnippetTest {
         boolean isValidInvalid = DammSnippet.validate(invalidNumber);
         assertFalse(isValidInvalid);
     }
+
+    @Test
+    void testGenerateCheckSumLong() {
+        assertEquals(1, DammSnippet.calculateCheckSumDigit((long) 10));
+    }
 }

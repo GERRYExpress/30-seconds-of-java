@@ -154,4 +154,12 @@ class ReverseArrayTest {
                 ReverseArraySnippet.reverseArray(null, 0, 2));
     }
 
+    @Test
+    void testReverseArraySingleInput() {
+        Integer[] arr = {1, 2, 3, 4, 5};
+        assertArrayEquals(arr, ReverseArraySnippet.reverseArray(arr, 1, 1));
+        Integer[] arr1 = {1, 2};
+        assertArrayEquals(arr1, ReverseArraySnippet.reverseArray(arr1, 0, 1));
+    }
+
 }

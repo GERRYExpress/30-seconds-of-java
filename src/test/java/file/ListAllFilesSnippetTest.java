@@ -41,4 +41,10 @@ class ListAllFilesSnippetTest {
         var files = ListAllFilesSnippet.listAllFiles("src/test/resources");
         assertEquals(6, files.size());
     }
+
+    @Test
+    void testListNullFile() {
+        var files = ListAllFilesSnippet.listAllFiles("src/awiodma");
+        assertEquals(0, files.size());
+    }
 }

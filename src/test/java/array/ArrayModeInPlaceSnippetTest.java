@@ -41,5 +41,6 @@ class ArrayModeInPlaceSnippetTest {
         assertEquals(-8, ArrayModeInPlaceSnippet.modeArrayInPlace(new int[]{-43, -8, -8, -10, -8, -6}));
         assertEquals(0, ArrayModeInPlaceSnippet.modeArrayInPlace(new int[]{-4, 0, -2, -1, 0}));
         assertEquals(1, ArrayModeInPlaceSnippet.modeArrayInPlace(new int[]{1, 1, 1, 1, 1, 1}));
+        assertEquals(0, ArrayModeInPlaceSnippet.modeArrayInPlace(new int[]{}));
     }
 }
