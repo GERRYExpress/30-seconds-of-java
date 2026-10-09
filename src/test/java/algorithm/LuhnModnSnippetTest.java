@@ -29,6 +29,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -87,5 +90,11 @@ class LuhnModnSnippetTest {
     void testCodePointFromCharacter() {
         char character = '&';
         assertThrows(IllegalArgumentException.class, () -> LuhnModnSnippet.codePointFromCharacter(character));
+    }
+
+    @Test
+    void testCharacterFromCode() {
+        assertThrows(IllegalArgumentException.class, () -> LuhnModnSnippet.characterFromCodePoint(5391));
+        assertThrows(IllegalArgumentException.class, () -> LuhnModnSnippet.characterFromCodePoint(-1));
     }
 }

@@ -55,14 +55,22 @@ class HaversineFormulaSnippetTest {
         assertEquals(351.9, distance2, 0.1);
     }
 
+
     // Test for out of range inputs, as latitudes should be in range [-90,90] and longitudes in
     // [-180,180]
     @Test
     void testFindHaversineDistanceInvalidRange() {
-        Assertions.assertThrows(IllegalArgumentException.class,
-                () -> {
-                    HaversineFormulaSnippet.findHaversineDistance(666, 0, 0, 0);
-                });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> HaversineFormulaSnippet.findHaversineDistance(91, 91, 181, 181));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> HaversineFormulaSnippet.findHaversineDistance(90, 91, 181, 181));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> HaversineFormulaSnippet.findHaversineDistance(90, 90, 181, 181));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> HaversineFormulaSnippet.findHaversineDistance(90, 90, 180, 181));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> HaversineFormulaSnippet.findHaversineDistance(91, 90, 180, 180));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> HaversineFormulaSnippet.findHaversineDistance(90, 91, 180, 180));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> HaversineFormulaSnippet.findHaversineDistance(90, 90, 181, 180));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> HaversineFormulaSnippet.findHaversineDistance(90, 90, 180, 181));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> HaversineFormulaSnippet.findHaversineDistance(91, 90, 180, 181));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> HaversineFormulaSnippet.findHaversineDistance(90, 91, 180, 181));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> HaversineFormulaSnippet.findHaversineDistance(90, 91, 180, 180));
     }
 
     @Test

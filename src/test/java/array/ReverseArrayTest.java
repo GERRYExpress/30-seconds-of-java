@@ -160,6 +160,11 @@ class ReverseArrayTest {
         assertArrayEquals(arr, ReverseArraySnippet.reverseArray(arr, 1, 1));
         Integer[] arr1 = {1, 2};
         assertArrayEquals(arr1, ReverseArraySnippet.reverseArray(arr1, 0, 1));
+        Integer[] arr2 = {1, 2, 3};
+        assertArrayEquals(arr2, ReverseArraySnippet.reverseArray(arr2, 2, 2));
+        Integer[] arr3 = {1, 2, 3, 4};
+        assertArrayEquals(arr3, ReverseArraySnippet.reverseArray(arr3, 3, 3));
+        assertArrayEquals(arr3, ReverseArraySnippet.reverseArray(arr3, 1, 3));
     }
 
 }
