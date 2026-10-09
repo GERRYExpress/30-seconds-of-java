@@ -32,24 +32,24 @@ import org.junit.jupiter.api.Test;
  */
 
 class BinarySearchIn2dArraySnippetTest {
-  /**
-  * Test for {@link BinarySearchIn2dArraySnippet #BinarySearchIn2dArraySnippet(int[][],int)}.
-  */
-  @Test
+    /**
+     * Test for {@link BinarySearchIn2dArraySnippet #BinarySearchIn2dArraySnippet(int[][],int)}.
+     */
+    @Test
     void testBinarySearchIn2dArraySnippetTest() {
-    int[][] arr1 = {{3, 4, 7, 9}, {12, 24, 26, 29}, {34, 55, 88, 99}, {100, 189, 232, 234}};
-    int[] ans1 = {1, 2};
-    Assertions.assertArrayEquals(ans1, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr1, 26));
-    int[][] arr2 = {{3, 4, 7, 9}, {12, 24, 26, 29}, {34, 55, 88, 99}, {100, 189, 232, 234}};
-    int[] ans2 = {-1, -1};
-    Assertions.assertArrayEquals(ans2, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr2, 69));
-    int[][] arr3 = {{3,5,6,100}, {1,4,7,9} };
-    int[] ans3 = {0, 0};
-    Assertions.assertArrayEquals(ans3, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr3, 3));
-    int[][] arr4 = {{1,2,3,7}};
-    int[] ans4 = {0, 2};
-    Assertions.assertArrayEquals(ans4, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr4, 3));
-    int[][] arr5 = {};
-    Assertions.assertThrows(IndexOutOfBoundsException.class, () -> BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr5, 1));
-  }
+        int[][] arr1 = {{3, 4, 7, 9}, {12, 24, 26, 29}, {34, 55, 88, 99}, {100, 189, 232, 234}};
+        int[] ans1 = {1, 2};
+        Assertions.assertArrayEquals(ans1, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr1, 26));
+        int[][] arr2 = {{3, 4, 7, 9}, {12, 24, 26, 29}, {34, 55, 88, 99}, {100, 189, 232, 234}};
+        int[] ans2 = {-1, -1};
+        Assertions.assertArrayEquals(ans2, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr2, 69));
+        int[][] arr3 = {{3, 5, 6, 100}, {1, 4, 7, 9}};
+        int[] ans3 = {0, 0};
+        Assertions.assertArrayEquals(ans3, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr3, 3));
+        int[][] arr4 = {{1, 2, 3, 7}};
+        int[] ans4 = {0, 2};
+        Assertions.assertArrayEquals(ans4, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr4, 3));
+        int[][] arr5 = {};
+        Assertions.assertThrows(IndexOutOfBoundsException.class, () -> BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr5, 1));
+    }
 }

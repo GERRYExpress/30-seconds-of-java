@@ -24,10 +24,11 @@
 
 package thread;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
-import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 /*
@@ -36,22 +37,22 @@ import org.junit.jupiter.api.Test;
  */
 class ThreadSnippetTest {
 
-  /**
-   * Tests for {@link ThreadSnippet#createThread(Runnable)}.
-   */
-  @Test
-  void createThread() throws InterruptedException {
-    AtomicInteger counter = new AtomicInteger(0);
+    /**
+     * Tests for {@link ThreadSnippet#createThread(Runnable)}.
+     */
+    @Test
+    void createThread() throws InterruptedException {
+        AtomicInteger counter = new AtomicInteger(0);
 
-    Thread t = ThreadSnippet.createThread(() -> {
-      for (int i = 0; i < 1000000; i++) {
-        counter.getAndIncrement();
-      }
-    });
+        Thread t = ThreadSnippet.createThread(() -> {
+            for (int i = 0; i < 1000000; i++) {
+                counter.getAndIncrement();
+            }
+        });
 
-    t.start();
-    t.join();
+        t.start();
+        t.join();
 
-    assertEquals(1000000, counter.get());
-  }
+        assertEquals(1000000, counter.get());
+    }
 }

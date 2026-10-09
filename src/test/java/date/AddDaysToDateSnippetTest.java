@@ -24,49 +24,50 @@
 
 package date;
 
-import java.text.ParseException;
-import java.time.LocalDate;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.text.ParseException;
+import java.time.LocalDate;
 
 /**
  * Tests for AddDaysToDateSnippet.
  */
 class AddDaysToDateSnippetTest {
 
-  /**
-  * Test add days to date.
-  *
-  * @throws ParseException if date can't be parsed
-  *
-  */
-  @Test
-  void testAddDaysToDate() throws ParseException {
-    LocalDate date = LocalDate.of(2022, 1, 1);
-    LocalDate dateAfterTwoDaysExpected = LocalDate.of(2022, 1, 3);
-    LocalDate dateAfterTwoDaysActual = AddDaysToDateSnippet.addDaysToDate(date, 2);
-    Assertions.assertEquals(dateAfterTwoDaysExpected, dateAfterTwoDaysActual);
-  }
+    /**
+     * Test add days to date.
+     *
+     * @throws ParseException if date can't be parsed
+     *
+     */
+    @Test
+    void testAddDaysToDate() throws ParseException {
+        LocalDate date = LocalDate.of(2022, 1, 1);
+        LocalDate dateAfterTwoDaysExpected = LocalDate.of(2022, 1, 3);
+        LocalDate dateAfterTwoDaysActual = AddDaysToDateSnippet.addDaysToDate(date, 2);
+        Assertions.assertEquals(dateAfterTwoDaysExpected, dateAfterTwoDaysActual);
+    }
 
-  @Test
-  void testAddDaysToDateNull() {
-    Assertions.assertNull(AddDaysToDateSnippet.addDaysToDate(null, 1));
-  }
+    @Test
+    void testAddDaysToDateNull() {
+        Assertions.assertNull(AddDaysToDateSnippet.addDaysToDate(null, 1));
+    }
 
-  /**
-  * Test add days to local date.
-  */
-  @Test
-  void testAddDaysToLocalDate() {
-    LocalDate date = LocalDate.now();
-    LocalDate dateAfterTwoDaysExpected = date.plusDays(2);
+    /**
+     * Test add days to local date.
+     */
+    @Test
+    void testAddDaysToLocalDate() {
+        LocalDate date = LocalDate.now();
+        LocalDate dateAfterTwoDaysExpected = date.plusDays(2);
 
-    LocalDate dateAfterTwoDaysActual = AddDaysToDateSnippet.addDaysToLocalDate(date, 2);
-    Assertions.assertEquals(dateAfterTwoDaysExpected, dateAfterTwoDaysActual);
-  }
+        LocalDate dateAfterTwoDaysActual = AddDaysToDateSnippet.addDaysToLocalDate(date, 2);
+        Assertions.assertEquals(dateAfterTwoDaysExpected, dateAfterTwoDaysActual);
+    }
 
-  @Test
-  void testAddDaysToLocalDateNull() {
-    Assertions.assertNull(AddDaysToDateSnippet.addDaysToLocalDate(null, 0));
-  }
+    @Test
+    void testAddDaysToLocalDateNull() {
+        Assertions.assertNull(AddDaysToDateSnippet.addDaysToLocalDate(null, 0));
+    }
 }
