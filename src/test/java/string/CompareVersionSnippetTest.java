@@ -58,7 +58,34 @@ class CompareVersionSnippetTest {
         );
 
 
-
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
         String oldestVersion = versions.stream().min(CompareVersionSnippet::compareVersion).get();
         assertEquals("2.3.4.1", oldestVersion);
 
