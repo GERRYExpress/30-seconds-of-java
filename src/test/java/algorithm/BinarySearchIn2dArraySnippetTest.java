@@ -49,5 +49,7 @@ class BinarySearchIn2dArraySnippetTest {
     int[][] arr4 = {{1,2,3,7}};
     int[] ans4 = {0, 2};
     Assertions.assertArrayEquals(ans4, BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr4, 3));
+    int[][] arr5 = {};
+    Assertions.assertThrows(IndexOutOfBoundsException.class, () -> BinarySearchIn2dArraySnippet.binarySearchIn2darr(arr5, 1));
   }
 }
